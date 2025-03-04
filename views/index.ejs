@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encrypted & Decrypted Messages</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        table { width: 80%; margin: 20px auto; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        input { padding: 8px; margin: 10px; width: 300px; }
+        button { padding: 8px 15px; cursor: pointer; background: blue; color: white; border: none; }
+    </style>
+</head>
+<body>
+    <h2>🔐 Encrypted & Decrypted Messages</h2>
+
+    <form action="/encrypt" method="POST">
+        <input type="text" name="message" placeholder="Enter message to encrypt" required>
+        <button type="submit">Encrypt & Save</button>
+    </form>
+
+    <h3>Stored Messages:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Encrypted Text</th>
+                <th>Decrypted Text</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach((item, index) => { %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= item.encrypted %></td>
+                    <td><%= item.decrypted %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
