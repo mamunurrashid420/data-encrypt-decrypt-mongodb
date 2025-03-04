@@ -9,3 +9,5 @@ git rm -r --cached .env node_modules
 git commit -m "Removed .env and node_modules from tracking"
 git push origin main
 ```
+
+![Image Alt Text](assets/images/image.png)
